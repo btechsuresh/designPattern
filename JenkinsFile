@@ -6,8 +6,6 @@ pipeline{
                 git 'https://github.com/btechsuresh/testingSSH.git'            
             }                    
         }
-    }
-    stages{
         stage("CHECK CODE"){
             steps{
                 echo "Checking code at workspace......"
@@ -15,4 +13,7 @@ pipeline{
         
         }
     }
+  
+        
+    
 }
