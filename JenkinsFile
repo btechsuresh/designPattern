@@ -3,12 +3,18 @@ pipeline{
     stages{
         stage("CHECKOUT CODE-GITHUB"){
             steps{
-                git 'https://github.com/btechsuresh/testingSSH.git'            
+                git 'https://github.com/btechsuresh/designPattern.git'            
             }                    
         }
         stage("CHECK CODE"){
             steps{
                 echo "Checking code at workspace......"
+            }
+        
+        }
+        stage("CHECK CODE"){
+            steps{
+               bat "mvn test"
             }
         
         }
