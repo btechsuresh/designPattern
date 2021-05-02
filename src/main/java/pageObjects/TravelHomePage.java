@@ -11,7 +11,8 @@ import pageComponent.FooterNav;
 import pageComponent.HeaderNav;
 
 public class TravelHomePage {
-	By selectionElement=By.id("traveller-home");//can't place in AbstractComponent if we do so then it will be hardcoded for footer.
+	By selectionElement=By.id("traveller-home");//can't place in -
+	//AbstractComponent if we do so then it will be hardcoded for footer.
 	By headerMainEle=By.id("buttons");
 	WebDriver driver;
 	SearchFlightAvail searchAvail;
@@ -34,7 +35,7 @@ public class TravelHomePage {
 	}
 	// Strategy Design pattern
 	//This method will take the object of classes that implements Interface
-	/*public void setBookingStrategy(SearchFlightAvail searchAvail){
+/*	public void setBookingStrategy(SearchFlightAvail searchAvail){
 		this.searchAvail=searchAvail;		
 	}*/
 	
@@ -47,10 +48,15 @@ public class TravelHomePage {
 			//this.searchAvail=searchAvail;		
 		}
 	
-	public void checkAvail(HashMap<String, String> reservationDetails) throws InterruptedException{
+	/*public void checkAvail(HashMap<String, String> reservationDetails) throws InterruptedException{
 		searchAvail.checkAvail(reservationDetails);
 		
-	}
+	}*/
+	
+	public void checkAvail(String origin, String destination) throws InterruptedException{
+	searchAvail.checkAvail(origin,destination);
+	
+}
 	
 	
 	

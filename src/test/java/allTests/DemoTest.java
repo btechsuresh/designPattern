@@ -21,7 +21,7 @@ public class DemoTest extends BaseTest{
 	
 	protected WebDriver driver;
 	TravelHomePage th;
-	//By sectionElement=By.id("flightSearchContainer"); //required for Strategy and not for factory
+	By sectionElement=By.id("flightSearchContainer"); //required for Strategy and not for factory
 	
 	@BeforeTest
 	public void setup(){
@@ -29,9 +29,9 @@ public class DemoTest extends BaseTest{
 		th=new TravelHomePage(driver);		
 	}
 	
-	
-	@Test(dataProvider="getData")
-	public void myTest(HashMap<String, String> reservationDetail) throws InterruptedException{
+	//@Test(dataProvider="getData")
+	@Test
+	public void myTest() throws InterruptedException{
 		th.goTo();
 		driver.manage().window().maximize();
 		th.getFooterNav().footerAttribute();
@@ -54,7 +54,7 @@ public class DemoTest extends BaseTest{
 		reservationDetails.put("destination2", "DEL");		
 		th.checkAvail(reservationDetails);*/
 		
-		th.checkAvail(reservationDetail);
+		//th.checkAvail(reservationDetail);
 		
 	}
 	
@@ -88,7 +88,7 @@ public class DemoTest extends BaseTest{
 	}	*/
 	
 	//by reading .json file
-	@DataProvider
+	/*@DataProvider
 	public Object[][] getData() throws IOException{
 		List<HashMap<String, String>> list=getJsonData(System.getProperty("user.dir")+"/src/main/java/dataLoads/resevertionDetails.json");
 			
@@ -96,6 +96,6 @@ public class DemoTest extends BaseTest{
 			//{reservationDetails},{reservationDetails1}
 			{list.get(0)},{list.get(1)}
 		};
-	}
+	}*/
 
 }

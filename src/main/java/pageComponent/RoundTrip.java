@@ -25,7 +25,7 @@ public class RoundTrip extends AbstractComponent implements SearchFlightAvail{
 
    //Instead of hadrcoded method parameters we can pass HashMap();
    
-	/*public void checkAvail(String origin, String destination) throws InterruptedException {
+	public void checkAvail(String origin, String destination) throws InterruptedException {
 		System.out.println("This is RoundTrip class");
 		findElement(rbo).click();	
 		this.wait.until((d)->findElement(from).isDisplayed());
@@ -34,7 +34,7 @@ public class RoundTrip extends AbstractComponent implements SearchFlightAvail{
 		selectDestinationCity(destination);
 		findElement(cb).click();
 		findElement(search).click();
-	}*/
+	}
 	
 	public void selectOriginCity(String origin){
 		findElement(from).click();
@@ -48,7 +48,7 @@ public class RoundTrip extends AbstractComponent implements SearchFlightAvail{
 		//findElement(By.xpath("(//a[@value='"+destination+"'])[2]")).click();
 	}
 
-	@Override
+	/*@Override
 	public void checkAvail(HashMap<String, String> reservationDetails) throws InterruptedException {
 		System.out.println("This is RoundTrip class");
 		findElement(rbo).click();	
@@ -59,6 +59,6 @@ public class RoundTrip extends AbstractComponent implements SearchFlightAvail{
 		findElement(cb).click();
 		findElement(search).click();
 		
-	}
+	}*/
 
 }

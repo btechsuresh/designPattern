@@ -11,6 +11,8 @@ import abstractComponents.AbstractComponent;
 import abstractComponents.SearchFlightAvail;
 
 public class MultiTrip extends AbstractComponent implements SearchFlightAvail{
+	
+	//as soon u extend AbstractComponent class, constructor will get created
 
 	public MultiTrip(WebDriver driver, By sectionElement) {
 		super(driver, sectionElement);
@@ -24,13 +26,20 @@ public class MultiTrip extends AbstractComponent implements SearchFlightAvail{
 	private By modalPopup=By.id("MultiCityModelAlert");
 	
 	//Instead of hardcoded parameters, we can use HashMap, see below method
-	/*public void checkAvail(String origin, String destination) {
-		makeStrategy((d)->selectOriginCity(origin));
+	public void checkAvail(String origin, String destination) {
+		makeStrategy((d)->selectOriginCity(origin)); //prerequest (ExecuteAround DPattern)
+		//above line means makeStrategy will accept any method of this class
+		//but execute that method after predefined lines in makeStrategy method 
+		// like selectOriginCity(origin) will execute after:-
+		/*System.out.println("This is Mutitrip class");
+		findElement(multiCity_rdo).click();
+		findElement(modalPopup).click();*/
+		
 		//selectOriginCity(origin);
 		wait.until((d)->findElement(to).isDisplayed());
 		selectDestinationCity(destination);
 		selectDestinationCity2("BLR");
-	}*/
+	}
 	
 	public void selectOriginCity(String origin){
 		findElement(from).click();
@@ -66,7 +75,7 @@ public class MultiTrip extends AbstractComponent implements SearchFlightAvail{
 		
 	}
 
-	@Override
+	/*@Override
 	public void checkAvail(HashMap<String, String> reservationDetails) throws InterruptedException {
 		makeStrategy((d)->selectOriginCity(reservationDetails.get("origin")));
 		//selectOriginCity(origin);
@@ -74,7 +83,7 @@ public class MultiTrip extends AbstractComponent implements SearchFlightAvail{
 		selectDestinationCity(reservationDetails.get("destination"));
 		selectDestinationCity2(reservationDetails.get("destination2"));
 		
-	}
+	}*/
 	
 
 }

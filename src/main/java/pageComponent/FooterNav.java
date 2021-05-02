@@ -14,7 +14,10 @@ public class FooterNav extends AbstractComponent{
 	
 	public FooterNav(WebDriver driver, By sectionElement) {
 		super(driver,sectionElement);
-		
+		//sectionElement from FooterNav class will go to AbstractComponent
+		//If we defined sectionElement in AbstractComponent class then it will
+		//work only for that particular section i.e footer/header because same 
+		//sectionElement will pass to all classes
 	}
 
 
