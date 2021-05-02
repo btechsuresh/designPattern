@@ -1,0 +1,18 @@
+pipeline{
+    agent any
+    stages{
+        stage("CHECKOUT CODE-GITHUB"){
+            steps{
+                git 'https://github.com/btechsuresh/testingSSH.git'            
+            }                    
+        }
+    }
+    stages{
+        stage("CHECK CODE"){
+            steps{
+                echo "Checking code at workspace......"
+            }
+        
+        }
+    }
+}
