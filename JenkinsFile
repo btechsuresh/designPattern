@@ -1,0 +1,30 @@
+currentBuild.displayName="Maven Project-#" +currentBuild.number
+pipeline{
+    agent any
+    tools{
+        maven 'MAVEN_HOME'
+        jdk 'JAVA_HOME'
+    }
+    stages{
+        stage("CHECKOUT CODE-GITHUB"){
+            steps{
+                git 'https://github.com/btechsuresh/designPattern.git'            
+            }                    
+        }
+        stage("CHECK CODE"){
+            steps{
+                echo "Checking code at workspace......"
+            }
+        
+        }
+        stage("CODE RUN"){
+            steps{
+               bat "mvn test"
+            }
+        
+        }
+    }
+  
+        
+    
+}
